@@ -57,7 +57,7 @@ export const NewsletterSection = () => {
     >
       {/* Heading */}
       <div className="text-center mb-10 sm:mb-12 md:mb-14">
-        <h2 className="lp-title max-w-2xl mx-auto text-[#122017] text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+        <h2 className="lp-title max-w-5xl mx-auto text-[#122017] text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
           Why Kakinada Chooses{" "}
           <span 
             className="italic inline-block"
@@ -73,7 +73,7 @@ export const NewsletterSection = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 max-w-6xl mx-auto max-sm:gap-2 gap-8 md:gap-0">
         
         {/* LEFT COLUMN - Features (appear first on mobile) */}
-        <div className="flex flex-col order-1 md:order-1">
+        <div className="flex flex-col order-1 md:order-1 max-sm:mr-0 sm:mr-8">
           {features
             .filter((f) => f.side === "left")
             .map((f) => (
@@ -121,7 +121,7 @@ export const NewsletterSection = () => {
         </div>
 
         {/* RIGHT COLUMN - Features (appear last on mobile) */}
-        <div className="flex flex-col order-3 md:order-3">
+        <div className="flex flex-col order-3 md:order-3 max-sm:ml-0 sm:ml-8">
           {features
             .filter((f) => f.side === "right")
             .map((f) => (
