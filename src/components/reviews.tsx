@@ -81,15 +81,17 @@ const Stars = ({ count = 5 }: { count?: number }) => (
 
 export default function VoiceOfSatisfaction() {
   const [active, setActive] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
 
   const go = (d: number) => {
     setActive((a) => (a + d + reviews.length) % reviews.length);
   };
 
   useEffect(() => {
+    setIsMounted(true);
     const t = setInterval(() => go(1), 5500);
     return () => clearInterval(t);
-  }, [active]);
+  }, []);
 
   const getR = (offset: number) => reviews[(active + offset + reviews.length) % reviews.length];
 
@@ -137,10 +139,10 @@ export default function VoiceOfSatisfaction() {
           </div>
 
           {/* Google badge */}
-          <div className="flex items-center gap-3 rounded-2xl px-4 sm:px-5 py-3 sm:py-4 w-fit max-sm:m-0  border border-white/15"
+          <div className="flex items-center gap-3 rounded-2xl px-4 sm:px-5 py-3 sm:py-4 w-fit mx-auto sm:mx-0 border border-white/15"
             style={{ background: "rgba(255,255,255,0.07)", backdropFilter: "blur(16px)" }}>
             <GoogleIcon size={24} />
-            <div className="flex gap-2">
+            <div>
               <p className="lp-small mb-1 text-white/60 text-xs sm:text-sm">Google Rating</p>
               <div className="flex items-center gap-2">
                 <Stars count={5} />
@@ -150,29 +152,25 @@ export default function VoiceOfSatisfaction() {
           </div>
         </div>
 
-        {/* ── Responsive Cards (1 on mobile, 2 on tablet, 3 on desktop) ── */}
-        {/* Mobile: grid-cols-1, Tablet: grid-cols-2, Desktop: grid-cols-3 */}
+        {/* ── Responsive Cards ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6 mb-10 items-stretch">
           {[0, 1, 2].map((offset) => {
             const r = getR(offset);
             const isCenter = offset === 1;
             
-            // On mobile, only show one card at a time (the active one)
-            // On tablet, show 2 cards (current and next)
-            // On desktop, show all 3 cards
-            const shouldShowOnMobile = offset === 0; // Only show first card on mobile
-            const shouldShowOnTablet = offset <= 1; // Show first 2 cards on tablet
+            const shouldShowOnMobile = offset === 0;
+            const shouldShowOnTablet = offset <= 1;
             
             return (
               <div
                 key={r.id + "-" + offset}
                 onClick={() => setActive((active + offset) % reviews.length)}
                 className={`card-hover rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-7 flex flex-col gap-4 sm:gap-5 cursor-pointer relative overflow-hidden
-                  ${isCenter ? "md:-translate-y-4 shadow-2xl" : ""}
+                  ${isCenter && isMounted ? "md:-translate-y-4 shadow-2xl" : ""}
                   ${!shouldShowOnMobile ? "hidden sm:block" : ""}
                   ${!shouldShowOnTablet ? "hidden md:block" : ""}`}
                 style={
-                  isCenter && window.innerWidth >= 768
+                  isCenter
                     ? { background: "linear-gradient(135deg, #b72c78 0%, #8a1f58 100%)", boxShadow: "0 30px 60px rgba(183,44,120,0.34)" }
                     : { background: "rgba(255,255,255,0.06)", backdropFilter: "blur(16px)", border: "1px solid rgba(255,255,255,0.12)" }
                 }
@@ -233,7 +231,7 @@ export default function VoiceOfSatisfaction() {
                 key={i}
                 onClick={() => setActive(i)}
                 className="dot-pill h-1.5 sm:h-2 rounded-full"
-                style={{ width: i === active ? "20px sm:28px" : "6px sm:8px", background: i === active ? "#b72c78" : "rgba(255,255,255,0.25)" }}
+                style={{ width: i === active ? "20px" : "6px", background: i === active ? "#b72c78" : "rgba(255,255,255,0.25)" }}
               />
             ))}
           </div>
