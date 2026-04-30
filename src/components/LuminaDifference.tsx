@@ -340,7 +340,7 @@ export const LuminaDifference = () => {
         <div style={{ position:'absolute', bottom:0, left:0, width:'220px', height:'220px', opacity:0.06, backgroundImage:'radial-gradient(#5e9a71 1px, transparent 1px)', backgroundSize:'16px 16px' }} />
       </div>
 
-      <div className="ld-section-pad" style={{ position:'relative', zIndex:10, maxWidth:'1200px', margin:'0 auto', padding:'clamp(40px,6vw,96px) clamp(20px,4vw,64px)' }}>
+      <div id='treatments' className="ld-section-pad" style={{ position:'relative', zIndex:10, maxWidth:'1200px', margin:'0 auto', padding:'clamp(40px,6vw,96px) clamp(20px,4vw,64px)' }}>
 
         {/* ── EYEBROW ── */}
         <div className="ld-eyebrow" style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:'48px' }}>

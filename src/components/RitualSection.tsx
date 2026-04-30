@@ -59,7 +59,7 @@ const MobileCarousel = () => {
   }, []);
 
   return (
-    <div className="lg:hidden">
+    <div id="specialists" className="lg:hidden">
       {/* Carousel Container */}
       <div className="relative px-2">
         {/* Main Card */}
@@ -188,7 +188,7 @@ const DesktopRitualSection = () => {
   const [leadDoctor, ...supportDoctors] = doctors;
 
   return (
-    <div className="hidden lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:gap-6 lg:items-stretch">
+    <div id="specialists" className="hidden lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:gap-6 lg:items-stretch">
       {/* Lead Doctor Card */}
       <article className="relative min-h-[620px] overflow-hidden border border-[#115057] bg-[#07171a] shadow-[22px_22px_0_rgba(0,0,0,0.34)]">
         <img

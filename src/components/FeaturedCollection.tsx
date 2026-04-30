@@ -23,7 +23,7 @@ const fields = [
 
 export const FeaturedCollection = () => {
   return (
-    <section className="bg-[#0e1a12] px-4 sm:px-5 md:px-8 lg:px-10 py-8 sm:py-14 md:py-16">
+    <section id='contact' className="bg-[#0e1a12] px-4 sm:px-5 md:px-8 lg:px-10 py-8 sm:py-14 md:py-16">
       <div className="mx-auto max-w-[1180px] overflow-hidden rounded-2xl sm:rounded-[24px] md:rounded-[28px] border border-[#b72c78]/40 bg-[#17251a] shadow-[0_20px_50px_rgba(0,0,0,0.30)] sm:shadow-[0_24px_70px_rgba(0,0,0,0.35)]">
         
         {/* Mobile/Tablet: Stack Vertically | Desktop: Side by Side */}

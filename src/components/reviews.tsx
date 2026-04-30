@@ -96,7 +96,7 @@ export default function VoiceOfSatisfaction() {
   const getR = (offset: number) => reviews[(active + offset + reviews.length) % reviews.length];
 
   return (
-    <section
+    <section id="reviews"
       className="relative w-full overflow-hidden py-12 sm:py-16 md:py-20 px-4 sm:px-6"
       style={{ background: '#0e1a12' }}
     >
