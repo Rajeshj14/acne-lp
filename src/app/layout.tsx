@@ -15,8 +15,8 @@ const notoSerif = Noto_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "LUMINA SKIN | Your Most Radiant Self, Revealed.",
-  description: "Science-backed skincare formulated to nourish your complexion and unlock a luminous, healthy glow from within.",
+   title: "Sudha Aesthetics",
+  description: "Sudha Aesthetics - Your Beauty Destination",
 };
 
 export default function RootLayout({
