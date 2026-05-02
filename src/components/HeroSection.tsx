@@ -12,7 +12,7 @@ const trustItems = [
 const stats = [
   { value: '3–4', label: 'Weeks to First Results' },
   { value: '100%', label: 'Doctor Performed' },
-  { value: 'Free', label: 'Telugu Doctor Speaking' },
+  { value: 'Doctor', label: ' Speaking' },
   { value: 'Treatment', label: ' Planned by Dermatologists' },
 ];
 

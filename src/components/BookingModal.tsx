@@ -192,7 +192,7 @@ export default function BookingModal() {
               </button>
 
               <p className="lp-small pb-1 text-center text-[#7a9e85] text-xs sm:text-sm">
-                Free · No obligation · Telugu-speaking doctor
+                 No obligation ·doctor speaking 
               </p>
             </form>
         </div>

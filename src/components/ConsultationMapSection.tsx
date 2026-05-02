@@ -1,7 +1,7 @@
 import BookingButton from './BookingButton';
 
 const trustPoints = [
-  'Free consultation',
+  'Book consultation',
   'No obligation',
   'Telugu-speaking doctor',
   'Kakinada clinic',
