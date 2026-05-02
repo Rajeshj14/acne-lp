@@ -52,7 +52,7 @@ export default function Navbared() {
       <div className="relative mx-auto flex min-h-[70px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
 
         {/* Logo */}
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center py-2">
           <div className="relative h-12 w-36 sm:h-14 sm:w-40 lg:h-25 lg:w-48">
             <Image
               src="/logos.JPG"
