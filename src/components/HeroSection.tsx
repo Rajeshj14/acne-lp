@@ -94,11 +94,18 @@ export const HeroSection = () => {
           background: #4ade80;
           animation: hero-pulse 1.6s ease-out infinite;
         }
+        @media (max-width: 639px) {
+          .hero-content-mobile {
+            background-image: linear-gradient(rgba(10,18,9,0.65), rgba(10,18,9,0.65)), url('/images23.jpg') !important;
+            background-size: cover !important;
+            background-position: top center !important;
+          }
+        }
       `}</style>
       {/* ── BANNER ── */}
-      <div className="relative grid grid-cols-1 lg:grid-cols-2 min-h-[580px] overflow-hidden">
-        {/* Left image pane - Mobile: Full width, Tablet: Full width, Desktop: Half */}
-        <div className="relative overflow-hidden min-h-[320px] sm:min-h-[380px] lg:min-h-full">
+      <div className="hero-banner relative grid grid-cols-1 lg:grid-cols-2 min-h-[580px] overflow-hidden">
+        {/* Left image pane - Hidden on mobile (bg image used instead), visible sm+ */}
+        <div className="hidden sm:block relative overflow-hidden min-h-[320px] sm:min-h-[380px] lg:min-h-full">
           <img
             alt="Radiant Skin"
             className="w-full h-full object-cover object-top block"
@@ -109,23 +116,30 @@ export const HeroSection = () => {
           
         </div>
 
-        {/* Right content pane - Mobile: Below image, Tablet: Below image, Desktop: Side by side */}
-        <div className="relative bg-[#17251a] flex flex-col justify-center px-5 sm:px-6 md:px-8 lg:px-11 py-8 sm:py-10 md:py-12 lg:py-10 gap-5 sm:gap-6 md:gap-7">
+        {/* Right content pane - Mobile: Over bg image, Tablet/Desktop: Same as before */}
+        <div className="hero-content-mobile relative sm:bg-[#17251a] flex flex-col justify-center px-5 sm:px-6 md:px-8 lg:px-11 py-8 sm:py-10 md:py-12 lg:py-10 gap-5 sm:gap-6 md:gap-7">
           <div className="absolute top-0 right-0 w-16 sm:w-20 h-16 sm:h-20 border-t border-r border-[#b72c78]/20" />
           <div className="absolute bottom-0 left-0 w-16 sm:w-20 h-16 sm:h-20 border-b border-l border-[#b72c78]/20" />
 
           {/* Headline */}
           <div>
-            <p className="lp-body mb-1.5 sm:mb-2 text-white/50 text-xs sm:text-sm">
+            <p className="lp-body mb-1.5 sm:mb-2 text-white/80 sm:text-white/50 text-xs sm:text-sm">
               AcneTreatment in Kakinada - Clear skin starts here
             </p>
-            <h1 className="lp-title mb-2 sm:mb-2.5 text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+            <h1 className="lp-title hidden sm:block mb-2 sm:mb-2.5 text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
               You Don't Have to <br />
-              <span className="italic inline-block" style={{ WebkitTextStroke: "2px #b72c78", color: "transparent" }}>
-                Hide Any 
-              </span> &amp; More. Advanced, 
+              <span className="italic inline-block" style={{ color: "#b72c78" }}>
+                Hide Any &amp;
+              </span> More. Advanced
             </h1>
-            <p className="lp-body text-white/40 text-sm sm:text-base">
+            <h1 className="lp-title block sm:hidden mb-2 text-white text-lg">
+              You Don't Have to
+              <span className="italic inline-block" style={{ color: "#b72c78" }}>
+                Hide Any &amp;
+              </span>
+               More Advanced
+            </h1>
+            <p className="lp-body text-white/80 sm:text-white/40 text-sm sm:text-base">
               Now Available Right Here in Kakinada.
               <br className="hidden sm:block" />
               Visit Sudha Skin Clinic and get best treatment
@@ -133,15 +147,15 @@ export const HeroSection = () => {
           </div>
 
           {/* Trust badges - Wrap on mobile, flex on tablet */}
-          <div className="flex flex-wrap gap-3 sm:gap-3.5">
-            {trustItems.map((item) => (
-              <div key={item.icon} className="flex items-center gap-1.5 sm:gap-2.5 flex-1 min-w-[140px] sm:min-w-0">
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-3 sm:gap-3.5">
+            {trustItems.map((item, i) => (
+              <div key={item.icon} className={`flex items-center gap-1.5 sm:gap-2.5 sm:flex-1 sm:min-w-0 ${i === 0 ? 'col-span-2' : ''}`}>
                 <div className="w-7 h-7 sm:w-[34px] sm:h-[34px] rounded-full bg-[#5e9a71]/12 border border-[#b72c78]/25 flex items-center justify-center shrink-0">
                   <span className="material-icons-round text-sm sm:text-base text-[#5e9a71]">
                     {item.icon}
                   </span>
                 </div>
-                <p className="lp-small tracking-[0.04em] sm:tracking-[0.06em] uppercase text-white/45 text-xs sm:text-sm">
+                <p className="lp-small tracking-[0.04em] sm:tracking-[0.06em] uppercase text-white/80 text-xs sm:text-sm">
                   {item.line1}<br />{item.line2}
                 </p>
               </div>
@@ -156,12 +170,12 @@ export const HeroSection = () => {
               className="hbtn hbtn-green inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-white font-semibold text-sm sm:text-base w-full sm:w-auto bg-[#5e9a71] shadow-[0_6px_20px_rgba(94,154,113,0.32)]"
             >
               <span className="material-icons-round text-[17px]">calendar_today</span>
-              Book Free Consultation
+              Book Your Consultation
             </BookingButton>
 
             {/* Secondary — WhatsApp */}
             <a
-              href="https://wa.me/919999999999"
+              href="https://wa.me/+91 9553033366"
               target="_blank"
               rel="noreferrer"
               className="hbtn hbtn-wa inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full text-white font-semibold text-sm sm:text-base w-full sm:w-auto"
@@ -181,7 +195,7 @@ export const HeroSection = () => {
       <div className="h-px bg-gradient-to-r from-transparent via-[#5e9a71]/40 to-transparent" />
 
       {/* ── STATS BAR ── */}
-      <div className="bg-[#0e1a12] px-5 sm:px-6 md:px-8 lg:px-11 py-6 sm:py-8 md:py-10">
+      <div className="hidden sm:block bg-[#0e1a12] px-5 sm:px-6 md:px-8 lg:px-11 py-6 sm:py-8 md:py-10">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-0">
           {stats.map((s, i) => (
             <div

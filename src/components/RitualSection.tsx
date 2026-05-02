@@ -292,7 +292,7 @@ export const RitualSection = () => {
             Meet Your{" "}
             <span
               className="italic inline-block"
-              style={{ WebkitTextStroke: "2px #b72c78", color: "transparent" }}
+              style={{ color: "#b72c78" }}
             >
               Dermatologist
             </span>{" "}

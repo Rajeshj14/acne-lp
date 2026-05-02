@@ -73,7 +73,7 @@ export default function BookingModal() {
             Sudha Skin Clinic · Kakinada
           </p>
           <h2 className="lp-subtitle text-white text-lg sm:text-xl md:text-2xl">
-            Book Free Consultation
+            Book Your Consultation
           </h2>
           <p className="lp-small mt-0.5 sm:mt-1 text-white/45 text-xs sm:text-sm">
             A dermatologist will call you back within 24 hours.

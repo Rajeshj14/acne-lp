@@ -19,7 +19,7 @@ const reviews: Review[] = [
     location: "Kakinada",
     rating: 5,
     text: "I struggled with severe acne for years, but after treatment at Sudha Skin Clinic, my skin has completely transformed! The doctors are incredibly knowledgeable, and the treatments are effective. I highly recommend them!",
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+    avatar: "RV",
     tag: "Severe Acne",
   },
   {
@@ -28,7 +28,7 @@ const reviews: Review[] = [
     location: "Kakinada",
     rating: 5,
     text: "I had acne scars on my cheeks for a long time, and nothing seemed to work. After undergoing chemical peels and laser treatment at Sudha Skin Clinic, my scars have almost faded! My confidence has been restored.",
-    avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    avatar: "PY",
     tag: "Acne Scars",
   },
   {
@@ -37,7 +37,7 @@ const reviews: Review[] = [
     location: "Kakinada",
     rating: 5,
     text: "I had tried multiple treatments before, but Sudha Skin Clinic's approach worked wonders! My acne is under control, and my skin looks clearer and smoother. The entire team is professional and caring.",
-    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+    avatar: "KA",
     tag: "Clearer Skin",
   },
   {
@@ -46,7 +46,7 @@ const reviews: Review[] = [
     location: "Kakinada",
     rating: 5,
     text: "Nenu acne scars ni koncham alochinchi treatment start chesanu. Sudha Skin Clinic lo treatments chesi, scars kuda takkuva ayyayi. Nenu chala happy ga unna, and skin chala better feel avtundi!",
-    avatar: "https://randomuser.me/api/portraits/women/26.jpg",
+    avatar: "AY",
     tag: "Scar Treatment",
   },
   {
@@ -55,7 +55,7 @@ const reviews: Review[] = [
     location: "Kakinada",
     rating: 5,
     text: "Sudha Skin Clinic lo acne treatment start chesina tarvata, na skin chala clear ayindi. Doctor and staff chala friendly and supportive. Nenu e clinic ni andariki recommend chestha.",
-    avatar: "https://randomuser.me/api/portraits/men/52.jpg",
+    avatar: "KK",
     tag: "Acne Treatment",
   },
 ];
@@ -78,6 +78,32 @@ const Stars = ({ count = 5 }: { count?: number }) => (
     ))}
   </div>
 );
+
+// Avatar component with initials inside circle
+const AvatarCircle = ({ initials, isCenter }: { initials: string; isCenter: boolean }) => {
+  const colors = [
+    "bg-[#5e9a71]",
+    "bg-[#b72c78]",
+    "bg-[#3f7455]",
+    "bg-[#8a1f58]",
+    "bg-[#4f8562]",
+  ];
+  
+  const colorIndex = initials.charCodeAt(0) % colors.length;
+  const bgColor = colors[colorIndex];
+  
+  return (
+    <div 
+      className={`w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full flex items-center justify-center flex-shrink-0
+        ${isCenter ? "bg-white/30 text-white" : bgColor + " text-white"}`}
+      style={isCenter ? { backgroundColor: "rgba(255,255,255,0.3)" } : {}}
+    >
+      <span className="text-sm sm:text-base md:text-lg font-semibold">
+        {initials}
+      </span>
+    </div>
+  );
+};
 
 export default function VoiceOfSatisfaction() {
   const [active, setActive] = useState(0);
@@ -131,7 +157,7 @@ export default function VoiceOfSatisfaction() {
               What Acne Patients in Kakinada Say about{" "}
               <span 
                 className="italic inline-block"
-                style={{ WebkitTextStroke: "2px #b72c78", color: "transparent" }}
+                style={{ color: "#b72c78" }}
               >
                 Sudha Skin Clinic
               </span>
@@ -165,7 +191,7 @@ export default function VoiceOfSatisfaction() {
               <div
                 key={r.id + "-" + offset}
                 onClick={() => setActive((active + offset) % reviews.length)}
-                className={`card-hover rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-7 flex flex-col gap-4 sm:gap-5 cursor-pointer relative overflow-hidden
+                className={`card-hover rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-7 flex flex-col gap-4 sm:gap-1 cursor-pointer relative overflow-hidden
                   ${isCenter && isMounted ? "md:-translate-y-4 shadow-2xl" : ""}
                   ${!shouldShowOnMobile ? "hidden sm:block" : ""}
                   ${!shouldShowOnTablet ? "hidden md:block" : ""}`}
@@ -182,31 +208,36 @@ export default function VoiceOfSatisfaction() {
                 </span>
 
                 {/* Tag */}
-                <span className={`lp-small px-2.5 sm:px-3 py-1 rounded-full w-fit text-xs sm:text-sm
+                <span className={`lp-small px-2.5 sm:px-3 py-1 rounded-full w-fit text-xs sm:text-sm mb-3
                   ${isCenter ? "bg-white/25 text-white" : "bg-[#5e9a71]/20 text-[#a8d4b5]"}`}>
                   ✦ {r.tag}
                 </span>
 
                 {/* Review text */}
-                <p className={`lp-body flex-1 text-sm sm:text-base ${isCenter ? "text-white" : "text-white/65"}`}>
+                <p className={`lp-body flex-1 text-sm sm:text-base ${isCenter ? "text-white" : "text-white/65"} leading-relaxed mt-3`}>
                   "{r.text.length > 120 ? r.text.substring(0, 120) + "..." : r.text}"
                 </p>
 
                 {/* Divider */}
-                <div className={`h-px ${isCenter ? "bg-white/25" : "bg-white/10"}`} />
+                <div className={`h-px ${isCenter ? "bg-white/25" : "bg-white/10"} mt-4`} />
 
-                {/* Author */}
-                <div className="flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
-                    <div className={`p-0.5 rounded-full flex-shrink-0 ${isCenter ? "bg-white/40" : "bg-gradient-to-br from-[#3f7455] to-[#5e9a71]"}`}>
-                      <img src={r.avatar} alt={r.name} className="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-full object-cover block" />
-                    </div>
+                {/* Author Section - FIXED ALIGNMENT */}
+                <div className="flex items-center justify-between w-full mt-3">
+                  {/* Left: Avatar + Name + Location */}
+                  <div className="flex items-center gap-3 flex-1 min-w-0">
+                    <AvatarCircle initials={r.avatar} isCenter={isCenter} />
                     <div className="min-w-0">
-                      <p className={`lp-small text-sm sm:text-base ${isCenter ? "text-white" : "text-white/90"} truncate`}>{r.name}</p>
-                      <p className={`lp-small mt-0.5 text-xs sm:text-sm ${isCenter ? "text-white/65" : "text-white/45"}`}>{r.location}</p>
+                      <p className={`text-sm sm:text-base ${isCenter ? "text-white" : "text-white/90"} font-medium truncate`}>
+                        {r.name}
+                      </p>
+                      <p className={`text-xs sm:text-sm ${isCenter ? "text-white/65" : "text-white/45"} truncate`}>
+                        {r.location}
+                      </p>
                     </div>
                   </div>
-                  <div className="flex flex-col items-end gap-1 flex-shrink-0">
+                  
+                  {/* Right: Google Icon + Stars */}
+                  <div className="flex flex-col items-end gap-1 flex-shrink-0 ml-3">
                     <GoogleIcon size={14} />
                     <Stars count={r.rating} />
                   </div>

@@ -93,7 +93,7 @@ export const ThankYou = () => {
           <h1 className="ty-serif ty-fu-2" style={{ fontSize:'clamp(3rem,7vw,6rem)', fontWeight:900, color:'#ffffff', lineHeight:1, margin:'0 0 8px' }}>
             Thank You
           </h1>
-          <h1 className="ty-serif ty-fu-2" style={{ fontSize:'clamp(3rem,7vw,6rem)', fontWeight:500, fontStyle:'italic', WebkitTextStroke:'2px #b72c78', color:'transparent', lineHeight:1, margin:'0 0 28px' }}>
+          <h1 className="ty-serif ty-fu-2" style={{ fontSize:'clamp(3rem,7vw,6rem)', fontWeight:500, fontStyle:'italic', color:'#b72c78', lineHeight:1, margin:'0 0 28px' }}>
             for Reaching Out.
           </h1>
 
@@ -105,7 +105,7 @@ export const ThankYou = () => {
           {/* WhatsApp CTA */}
           <div className="ty-fu-3" style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'16px', flexWrap:'wrap' }}>
             <a
-              href="https://wa.me/919999999999"
+              href="https://wa.me/+91 9553033366"
               target="_blank"
               rel="noreferrer"
               className="ty-wa"

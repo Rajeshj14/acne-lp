@@ -6,7 +6,7 @@ const cases = [
   {
     before: '/ACNI-02.jpeg',
     after: '/ACNI-03.jpeg',
-    number: '04',
+    number: '01',
     patient: 'Jebix Shylin S.',
     gender: 'Female · 29',
     location: 'Kakinada',
@@ -22,7 +22,7 @@ const cases = [
   {
     before: '/ACNI-04.jpeg',
     after: '/ACNI-05.jpeg',
-    number: '05',
+    number: '02',
     patient: 'Karthik P.',
     gender: 'Male · 25',
     location: 'Kakinada',
@@ -38,7 +38,7 @@ const cases = [
   {
     before: '/ACNI-06.jpeg',
     after: '/ACNI-07.jpeg',
-    number: '06',
+    number: '03',
     patient: 'Siva T.',
     gender: 'Female · 31',
     location: 'Kakinada',
@@ -47,14 +47,14 @@ const cases = [
     treatment: 'Laser + Dermarolling',
     sessions: '7 Sessions',
     duration: '5 Months',
-    result: '80%',
+    result: '75%',
     resultLabel: 'Texture Improved',
     quote: 'I can see real improvement in my skin texture, and my confidence is back.',
   },
   {
     before: '/ACNI-08.jpeg',
     after: '/ACNI-09.jpeg',
-    number: '07',
+    number: '04',
     patient: 'Mani N.',
     gender: 'Female · 26',
     location: 'Kakinada',
@@ -63,14 +63,14 @@ const cases = [
     treatment: 'Diagnosis-led Acne Care',
     sessions: '4 Sessions',
     duration: '2 Months',
-    result: '76%',
+    result: '70%',
     resultLabel: 'Acne Reduced',
     quote: 'This was the first time someone diagnosed the acne type before starting treatment.',
   },
   {
     before: '/ACNE.jpeg',
     after: '/ACNE1.jpeg',
-    number: '01',
+    number: '05',
     patient: 'Priya R.',
     gender: 'Female · 27',
     location: 'Kakinada',
@@ -82,38 +82,6 @@ const cases = [
     result: '85%',
     resultLabel: 'Scar Reduction',
     quote: 'I never thought my skin could look this clear. Lumina gave me my confidence back.',
-  },
-  {
-    before: '/ACNE.jpeg',
-    after: '/ACNE2.jpeg',
-    number: '02',
-    patient: 'Priya R.',
-    gender: 'Female · 27',
-    location: 'Kakinada',
-    concern: 'Hormonal acne & pigmentation',
-    area: 'Cheeks',
-    treatment: 'Chemical Peel',
-    sessions: '6 Sessions',
-    duration: '3 Months',
-    result: '90%',
-    resultLabel: 'Clearer Skin',
-    quote: 'After years of struggling, this treatment finally worked. I feel like myself again.',
-  },
-  {
-    before: '/ACNE.jpeg',
-    after: '/ACNE3.jpeg',
-    number: '03',
-    patient: 'Priya R.',
-    gender: 'Female · 27',
-    location: 'Kakinada',
-    concern: 'Comedonal & cystic acne',
-    area: 'Forehead',
-    treatment: 'Barrier Repair',
-    sessions: '5 Sessions',
-    duration: '2.5 Months',
-    result: '78%',
-    resultLabel: 'Acne Cleared',
-    quote: 'Results exceeded my expectations. Professional staff, genuine transformation.',
   },
 ];
 
@@ -162,7 +130,6 @@ export const LuminaDifference = () => {
             overflow: hidden !important;
             width: 100% !important;
           }
-          /* Images come first on mobile — swap order */
           .ld-left-col { order: 2 !important; }
           .ld-right-col { order: 1 !important; width: 100% !important; min-width: 0 !important; overflow: hidden !important; }
 
@@ -182,7 +149,6 @@ export const LuminaDifference = () => {
           .ld-heading {
             margin-bottom: 28px !important;
           }
-          /* Images: full width, constrained to screen */
           .ld-images-grid {
             grid-template-columns: 1fr 1fr !important;
             gap: 8px !important;
@@ -206,7 +172,6 @@ export const LuminaDifference = () => {
             min-width: 0 !important;
             overflow: hidden !important;
           }
-          /* Thumbnail carousel: horizontal scroll, no arrows on mobile */
           .ld-thumb-wrapper {
             flex-direction: column !important;
             gap: 10px !important;
@@ -227,7 +192,6 @@ export const LuminaDifference = () => {
             scroll-snap-align: start !important;
             flex-shrink: 0 !important;
           }
-          /* Hide up/down arrows on mobile, show left/right instead */
           .ld-nav-col {
             flex-direction: row !important;
             justify-content: space-between !important;
@@ -242,18 +206,11 @@ export const LuminaDifference = () => {
             height: 36px !important;
             font-size: 14px !important;
           }
-          /* Arrow symbols: vertical → horizontal on mobile */
           .ld-nav-btn-prev::after { content: '←' !important; }
           .ld-nav-btn-next::after { content: '→' !important; }
           .ld-nav-btn-prev, .ld-nav-btn-next { font-size: 0 !important; }
           .ld-nav-btn-prev::after, .ld-nav-btn-next::after { font-size: 16px !important; }
 
-          .ld-stats-grid {
-            grid-template-columns: repeat(3,1fr) !important;
-          }
-          .ld-stat-val {
-            font-size: 1.1rem !important;
-          }
           .ld-details {
             gap: 8px !important;
           }
@@ -273,6 +230,12 @@ export const LuminaDifference = () => {
           .ld-quote p {
             font-size: 0.95rem !important;
           }
+        }
+
+        /* ── STATS GRID: only ≤321px ── */
+        @media (max-width: 321px) {
+          .ld-stats-grid { grid-template-columns: 1fr !important; }
+          .ld-stat-val { font-size: 1.1rem !important; }
         }
 
         /* ── TABLET (640px – 1023px) ── */
@@ -311,7 +274,6 @@ export const LuminaDifference = () => {
           .ld-section-pad {
             padding: clamp(32px,5vw,64px) clamp(20px,4vw,40px) !important;
           }
-          /* Two-col info row on tablet */
           .ld-info-cols {
             display: grid !important;
             grid-template-columns: 1fr 1fr !important;
@@ -321,7 +283,7 @@ export const LuminaDifference = () => {
           .ld-info-cols-right { display: flex; flex-direction: column; gap: 20px; }
         }
 
-        /* ── DESKTOP (≥1024px) — untouched ── */
+        /* ── DESKTOP (≥1024px) ── */
         @media (min-width: 1024px) {
           .ld-main-grid {
             grid-template-columns: 1fr 1.3fr;
@@ -330,6 +292,11 @@ export const LuminaDifference = () => {
           .ld-info-cols { display: contents; }
           .ld-info-cols-left { display: contents; }
           .ld-info-cols-right { display: contents; }
+        }
+        @media (max-width: 321px) {
+          .ld-stats-grid {
+            grid-template-columns: 1fr !important;
+          }
         }
       `}</style>
 
@@ -356,7 +323,7 @@ export const LuminaDifference = () => {
           <h2 className="ld-serif" style={{ fontSize:'clamp(2.2rem,5vw,4rem)', fontWeight:700, color:'#122017', lineHeight:1.1, margin:0 }}>
             Real Kakinada Stories.
           </h2>
-          <h2 className="ld-serif" style={{ fontSize:'clamp(2.2rem,5vw,4rem)', fontWeight:500, fontStyle:'italic', WebkitTextStroke:'2px #b72c78', color:'transparent', lineHeight:1.1, margin:0 }}>
+          <h2 className="ld-serif" style={{ fontSize:'clamp(2.2rem,5vw,4rem)', fontWeight:500, fontStyle:'italic', color:'#b72c78', lineHeight:1.1, margin:0 }}>
             Real Acne Recovery.
           </h2>
         </div>
@@ -386,15 +353,15 @@ export const LuminaDifference = () => {
                 </div>
 
                 {/* Stats */}
-                <div className={`ld-stats-grid ${fading ? '' : 'ld-fu'}`} style={{ opacity: fading ? 0 : 1, display:'grid', gridTemplateColumns:'repeat(3,1fr)', border:'1px solid rgba(94,154,113,0.2)' }}>
+                <div className={`ld-stats-grid ${fading ? '' : 'ld-fu'}`} style={{ opacity: fading ? 0 : 1, display:'grid', gridTemplateColumns:'repeat(3,1fr)', border:'1px solid rgba(94,154,113,0.2)', overflow:'hidden' }}>
                   {[
                     { val: c.result, label: c.resultLabel },
                     { val: c.sessions, label: 'Treatment' },
                     { val: c.duration, label: 'Duration' },
                   ].map(({ val, label }, i) => (
-                    <div key={label} style={{ textAlign:'center', padding:'16px 8px', borderRight: i < 2 ? '1px solid rgba(94,154,113,0.2)' : 'none' }}>
-                      <p className="ld-serif ld-stat-val" style={{ fontSize:'1.4rem', fontWeight:700, color:'#b72c78', margin:0 }}>{val}</p>
-                      <p style={{ fontSize:'10px', letterSpacing:'0.2em', textTransform:'uppercase', color:'rgba(18,32,23,0.5)', margin:'4px 0 0', fontWeight:300 }}>{label}</p>
+                    <div key={label} style={{ textAlign:'center', padding:'12px 4px', borderRight: i < 2 ? '1px solid rgba(94,154,113,0.2)' : 'none', overflow:'hidden', minWidth:0 }}>
+                      <p className="ld-serif ld-stat-val" style={{ fontSize:'1.1rem', fontWeight:700, color:'#b72c78', margin:0, whiteSpace:'nowrap' }}>{val}</p>
+                      <p style={{ fontSize:'9px', letterSpacing:'0.08em', textTransform:'uppercase', color:'rgba(18,32,23,0.5)', margin:'4px 0 0', fontWeight:300, wordBreak:'break-word', lineHeight:1.3 }}>{label}</p>
                     </div>
                   ))}
                 </div>
@@ -425,7 +392,7 @@ export const LuminaDifference = () => {
                     <svg width="16" height="16" fill="currentColor" viewBox="0 0 32 32">
                       <path d="M16.02 4.8A11.14 11.14 0 0 0 6.6 21.9L5.2 27l5.22-1.36A11.14 11.14 0 1 0 16.02 4.8Zm0 2.02a9.12 9.12 0 0 1 7.73 13.95 9.2 9.2 0 0 1-11.96 3.05l-.37-.22-3.1.8.83-3.02-.24-.39A9.12 9.12 0 0 1 16.02 6.82Zm-3.85 4.33c-.2 0-.52.08-.79.38-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.07 3.31 5.1 4.51 2.52 1 3.04.8 3.59.75.55-.05 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15-.2.3-.78.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.65-.94-2.25-.24-.58-.5-.5-.68-.5h-.58Z" />
                     </svg>
-                    Book Free Consult
+                    Book Your Consultation
                   </a>
                   <div style={{ display:'flex', alignItems:'center', gap:'6px' }}>
                     <span style={{ width:'7px', height:'7px', borderRadius:'50%', background:'#4ade80', display:'inline-block' }} />
@@ -438,14 +405,15 @@ export const LuminaDifference = () => {
           </div>
 
           {/* ───── RIGHT: Before / After ───── */}
-          <div className="ld-right-col" style={{ display:'flex', flexDirection:'column', gap:'14px' }}>
+          <div className="ld-right-col" style={{ display:'flex', flexDirection:'column', gap:'14px', width:'100%', minWidth:0, overflow:'hidden' }}>
 
-            {/* TWO CLEAN BOXES — Before | After */}
+            {/* TWO CLEAN BOXES — Before | After (Text removed from top) */}
             <div className="ld-images-grid" style={{
               display:'grid', gridTemplateColumns:'1fr 1fr', gap:'10px',
               opacity: fading ? 0 : 1, transition:'opacity 0.35s',
+              width:'100%', maxWidth:'100%', overflow:'hidden',
             }}>
-              {/* BEFORE BOX */}
+              {/* BEFORE BOX - Text removed from top */}
               <div className="ld-image-box" style={{ position:'relative', overflow:'hidden', borderRadius:'6px', aspectRatio:'3/4' }}>
                 <img
                   key={`before-${active}`}
@@ -454,23 +422,11 @@ export const LuminaDifference = () => {
                   style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'top center', display:'block' }}
                 />
                 <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg, transparent 55%, rgba(8,18,10,0.7) 100%)', pointerEvents:'none' }} />
-                <div style={{ position:'absolute', top:'12px', left:'12px' }}>
-                  <span style={{
-                    display:'inline-flex', alignItems:'center', gap:'6px',
-                    padding:'5px 14px', borderRadius:'4px',
-                    background:'rgba(14,26,18,0.88)', backdropFilter:'blur(8px)',
-                    border:'1px solid rgba(94,154,113,0.4)',
-                    fontSize:'10px', fontWeight:600, letterSpacing:'0.22em', textTransform:'uppercase', color:'#5e9a71',
-                  }}>Before</span>
-                </div>
-                <div style={{ position:'absolute', bottom:'12px', left:'12px', right:'12px' }}>
-                  <p style={{ margin:0, fontSize:'11px', color:'rgba(255,255,255,0.55)', letterSpacing:'0.1em', textTransform:'uppercase' }}>
-                    {c.patient} · {c.gender}
-                  </p>
-                </div>
+                {/* REMOVED: Before badge at top-left */}
+                {/* REMOVED: Patient name and gender at bottom */}
               </div>
 
-              {/* AFTER BOX */}
+              {/* AFTER BOX - Text removed from top */}
               <div className="ld-image-box" style={{ position:'relative', overflow:'hidden', borderRadius:'6px', aspectRatio:'3/4' }}>
                 <img
                   key={`after-${active}`}
@@ -479,29 +435,9 @@ export const LuminaDifference = () => {
                   style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'top center', display:'block' }}
                 />
                 <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg, transparent 45%, rgba(8,18,10,0.75) 100%)', pointerEvents:'none' }} />
-                <div style={{ position:'absolute', top:'12px', right:'12px', display:'flex', flexDirection:'column', alignItems:'flex-end', gap:'6px' }}>
-                  <span style={{
-                    display:'inline-flex', alignItems:'center', gap:'6px',
-                    padding:'5px 14px', borderRadius:'4px',
-                    background:'rgba(14,26,18,0.88)', backdropFilter:'blur(8px)',
-                    border:'1px solid rgba(94,154,113,0.4)',
-                    fontSize:'10px', fontWeight:600, letterSpacing:'0.22em', textTransform:'uppercase', color:'rgba(255,255,255,0.82)',
-                  }}>After · {c.duration}</span>
-                  <span style={{
-                    display:'inline-flex', alignItems:'center', gap:'6px',
-                    padding:'5px 12px', borderRadius:'4px',
-                    background:'#b72c78',
-                    fontSize:'10px', fontWeight:600, letterSpacing:'0.15em', textTransform:'uppercase', color:'white',
-                  }}>
-                    <span style={{ width:'6px', height:'6px', borderRadius:'50%', background:'white' }} />
-                    {c.result} {c.resultLabel}
-                  </span>
-                </div>
-                <div style={{ position:'absolute', bottom:'12px', left:'12px', right:'12px' }}>
-                  <p style={{ margin:0, fontSize:'11px', color:'rgba(255,255,255,0.55)', letterSpacing:'0.1em', textTransform:'uppercase' }}>
-                    {c.concern}
-                  </p>
-                </div>
+                {/* REMOVED: After badge at top-right */}
+                {/* REMOVED: Result badge */}
+                {/* REMOVED: Concern text at bottom */}
                 <div style={{ position:'absolute', bottom:0, left:0, right:0, height:'3px', background:'rgba(255,255,255,0.08)', zIndex:20 }}>
                   <div key={progressKey} className="ld-prog" style={{ height:'100%', background:'#5e9a71' }} />
                 </div>

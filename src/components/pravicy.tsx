@@ -124,7 +124,7 @@ export const PrivacyPolicy = () => {
           <h1 className="pp-serif" style={{ fontSize:'clamp(2.8rem,6vw,5.5rem)', fontWeight:900, color:'#ffffff', lineHeight:1.05, margin:'0 0 8px' }}>
             Privacy
           </h1>
-          <h1 className="pp-serif" style={{ fontSize:'clamp(2.8rem,6vw,5.5rem)', fontWeight:500, fontStyle:'italic', WebkitTextStroke:'2px #b72c78', color:'transparent', lineHeight:1.05, margin:'0 0 32px' }}>
+          <h1 className="pp-serif" style={{ fontSize:'clamp(2.8rem,6vw,5.5rem)', fontWeight:500, fontStyle:'italic', color:'#b72c78', lineHeight:1.05, margin:'0 0 32px' }}>
             Policy.
           </h1>
 

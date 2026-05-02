@@ -48,7 +48,7 @@ export const FeaturedCollection = () => {
                 Could this be{" "}
                 <span 
                   className="italic inline-block"
-                  style={{ WebkitTextStroke: "2px #b72c78", color: "transparent" }}
+                  style={{ color: "#b72c78" }}
                 >
                   your story?
                 </span>
@@ -60,12 +60,12 @@ export const FeaturedCollection = () => {
               {/* Stats Cards - Stack on mobile, side by side on tablet */}
               <div className="lp-body mt-6 sm:mt-7 md:mt-8 grid gap-3 grid-cols-1 sm:grid-cols-2 text-white/75">
                 <div className="rounded-xl sm:rounded-[16px] border border-white/15 bg-white/10 px-3 sm:px-4 py-3 sm:py-4 backdrop-blur-sm">
-                  <span className="lp-stat mb-1.5 sm:mb-2 block text-[#b72c78] text-xl sm:text-2xl">30s</span>
-                  <span className="text-xs sm:text-sm">Takes 30 seconds.</span>
+                  <span className="lp-stat mb-1.5 sm:mb-2 block text-[#b72c78] text-xl sm:text-2xl">Secure</span>
+                  <span className="text-xs sm:text-sm">Your data is safe and confidential.</span>
                 </div>
                 <div className="rounded-xl sm:rounded-[16px] border border-white/15 bg-white/10 px-3 sm:px-4 py-3 sm:py-4 backdrop-blur-sm">
-                  <span className="lp-stat mb-1.5 sm:mb-2 block text-[#b72c78] text-xl sm:text-2xl">Dr.</span>
-                  <span className="text-xs sm:text-sm">Dr. Sudha will personally review your case.</span>
+                  <span className="lp-stat mb-1.5 sm:mb-2 block text-[#b72c78] text-xl sm:text-2xl">Accurate</span>
+                  <span className="text-xs sm:text-sm">Precise evaluation for better results.</span>
                 </div>
               </div>
             </div>

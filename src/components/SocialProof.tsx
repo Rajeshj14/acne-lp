@@ -16,7 +16,7 @@ export const SocialProof = () => {
               Call Consultation
             </p>
             <h2 className="lp-title max-w-[620px] text-[#061114]">
-              Clear Skin Starts with <span className="italic" style={{ WebkitTextStroke: "2px #b72c78", color: "transparent" }}>One call</span>
+              Clear Skin Starts with <span className="italic" style={{ color: "#b72c78" }}>One call</span>
             </h2>
 
             <div className="lp-body mt-5 flex flex-wrap gap-x-3 gap-y-2 text-[#315e63]">
