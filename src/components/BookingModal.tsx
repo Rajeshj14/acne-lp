@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 const concerns = [
   'Acne Treatment',
@@ -12,9 +13,13 @@ const concerns = [
   'Other',
 ];
 
+const EMPTY = { name: '', email: '', phone: '', concern: '', description: '' };
+
 export default function BookingModal() {
-  const [open, setOpen]           = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const router = useRouter();
+  const [open, setOpen]       = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [fields, setFields]   = useState(EMPTY);
 
   useEffect(() => {
     const handler = () => setOpen(true);
@@ -27,11 +32,26 @@ export default function BookingModal() {
     return () => { document.body.style.overflow = ''; };
   }, [open]);
 
-  const close = () => { setOpen(false); setSubmitted(false); };
+  const close = () => { setOpen(false); setFields(EMPTY); };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const set = (k: keyof typeof EMPTY) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
+    setFields(f => ({ ...f, [k]: e.target.value }));
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    try {
+      await fetch(process.env.NEXT_PUBLIC_GAS_URL!, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify({ ...fields, source: 'Booking Form' }),
+      });
+    } finally {
+      setLoading(false);
+      setOpen(false);
+      router.push('/thank-you');
+    }
   };
 
   if (!open) return null;
@@ -92,30 +112,7 @@ export default function BookingModal() {
 
         {/* ── Body (scrollable) ── */}
         <div className="overflow-y-auto overscroll-contain px-4 sm:px-5 md:px-7 py-4 sm:py-5 md:py-6">
-          {submitted ? (
-            <div className="flex flex-col items-center gap-3 sm:gap-4 py-6 sm:py-8 text-center">
-              <div className="flex h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 items-center justify-center rounded-full bg-[#5e9a71]/15">
-                <svg className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-[#5e9a71]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <div>
-                <p className="lp-subtitle text-[#122017] text-lg sm:text-xl md:text-2xl">
-                  We'll be in touch!
-                </p>
-                <p className="lp-body mt-1 sm:mt-2 text-[#4f6d57] text-sm sm:text-base">
-                  Our dermatologist will call you within 24 hours.
-                </p>
-              </div>
-              <button
-                onClick={close}
-                className="lp-button mt-2 sm:mt-3 inline-flex items-center justify-center rounded-full bg-[#5e9a71] px-8 sm:px-10 py-2.5 sm:py-3 text-white text-sm sm:text-base shadow-[0_12px_28px_rgba(94,154,113,0.28)] transition hover:-translate-y-0.5 hover:bg-[#4f8562] w-full sm:w-auto"
-              >
-                Done
-              </button>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:gap-4">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:gap-4">
 
               {/* Row 1 — Name + Email (Stack on mobile, 2-col on tablet+) */}
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
@@ -125,6 +122,8 @@ export default function BookingModal() {
                     required
                     type="text"
                     placeholder="Your full name"
+                    value={fields.name}
+                    onChange={set('name')}
                     className="lp-body h-10 sm:h-11 rounded-lg sm:rounded-[10px] border border-[#c8dcd0] bg-white px-3 sm:px-4 text-[#122017] text-sm sm:text-base outline-none transition focus:border-[#b72c78] focus:ring-2 focus:ring-[#5e9a71]/20"
                   />
                 </label>
@@ -135,6 +134,8 @@ export default function BookingModal() {
                     required
                     type="email"
                     placeholder="Your email"
+                    value={fields.email}
+                    onChange={set('email')}
                     className="lp-body h-10 sm:h-11 rounded-lg sm:rounded-[10px] border border-[#c8dcd0] bg-white px-3 sm:px-4 text-[#122017] text-sm sm:text-base outline-none transition focus:border-[#b72c78] focus:ring-2 focus:ring-[#5e9a71]/20"
                   />
                 </label>
@@ -148,6 +149,8 @@ export default function BookingModal() {
                     required
                     type="tel"
                     placeholder="Your phone"
+                    value={fields.phone}
+                    onChange={set('phone')}
                     className="lp-body h-10 sm:h-11 rounded-lg sm:rounded-[10px] border border-[#c8dcd0] bg-white px-3 sm:px-4 text-[#122017] text-sm sm:text-base outline-none transition focus:border-[#b72c78] focus:ring-2 focus:ring-[#5e9a71]/20"
                   />
                 </label>
@@ -156,7 +159,8 @@ export default function BookingModal() {
                   <span className="lp-small text-[#122017] text-xs sm:text-sm">Skin Concern *</span>
                   <select
                     required
-                    defaultValue=""
+                    value={fields.concern}
+                    onChange={set('concern')}
                     className="lp-body h-10 sm:h-11 rounded-lg sm:rounded-[10px] border border-[#c8dcd0] bg-white px-3 sm:px-4 text-[#122017] text-sm sm:text-base outline-none transition focus:border-[#b72c78] focus:ring-2 focus:ring-[#5e9a71]/20"
                   >
                     <option value="" disabled>Select concern</option>
@@ -173,22 +177,24 @@ export default function BookingModal() {
                 <textarea
                   rows={3}
                   placeholder="Briefly describe your concern or any questions..."
+                  value={fields.description}
+                  onChange={set('description')}
                   className="lp-body resize-none rounded-lg sm:rounded-[10px] border border-[#c8dcd0] bg-white px-3 sm:px-4 py-2 sm:py-3 text-[#122017] text-sm sm:text-base outline-none transition focus:border-[#b72c78] focus:ring-2 focus:ring-[#5e9a71]/20"
                 />
               </label>
 
               <button
                 type="submit"
-                className="lp-button mt-1 inline-flex h-11 sm:h-12 w-full items-center justify-center rounded-full bg-[#5e9a71] text-white text-sm sm:text-base shadow-[0_12px_28px_rgba(94,154,113,0.28)] transition hover:-translate-y-0.5 hover:bg-[#4f8562]"
+                disabled={loading}
+                className="lp-button mt-1 inline-flex h-11 sm:h-12 w-full items-center justify-center rounded-full bg-[#5e9a71] text-white text-sm sm:text-base shadow-[0_12px_28px_rgba(94,154,113,0.28)] transition hover:-translate-y-0.5 hover:bg-[#4f8562] disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Confirm Booking
+                {loading ? 'Submitting…' : 'Confirm Booking'}
               </button>
 
               <p className="lp-small pb-1 text-center text-[#7a9e85] text-xs sm:text-sm">
                 Free · No obligation · Telugu-speaking doctor
               </p>
             </form>
-          )}
         </div>
       </div>
     </div>

@@ -68,20 +68,20 @@ export const ThankYou = () => {
         <div style={{ position:'absolute', top:0, left:0, width:'160px', height:'160px', opacity:0.05, backgroundImage:'radial-gradient(rgba(183,44,120,0.5) 1px, transparent 1px)', backgroundSize:'12px 12px' }} />
       </div>
 
-      <div style={{ position:'relative', zIndex:1, maxWidth:'1100px', margin:'0 auto', padding:'clamp(60px,8vw,120px) clamp(20px,4vw,64px)' }}>
+      <div style={{ position:'relative', zIndex:1, maxWidth:'1100px', margin:'0 auto',}} className="py-5">
 
         {/* ── HERO ── */}
-        <div style={{ textAlign:'center', marginBottom:'80px' }}>
+        <div style={{ textAlign:'center', marginBottom:'30px' }}>
 
           {/* Check icon */}
-          <div className="ty-check" style={{ display:'inline-flex', alignItems:'center', justifyContent:'center', width:'80px', height:'80px', borderRadius:'50%', background:'linear-gradient(135deg, #5e9a71, #3f7455)', marginBottom:'32px', boxShadow:'0 12px 40px rgba(94,154,113,0.4)' }}>
+          <div className="ty-check" style={{ display:'inline-flex', alignItems:'center', justifyContent:'center', width:'80px', height:'80px', borderRadius:'50%', background:'linear-gradient(135deg, #5e9a71, #3f7455)', marginBottom:'12px', boxShadow:'0 12px 40px rgba(94,154,113,0.4)' }}>
             <svg width="36" height="36" fill="none" stroke="#ffffff" strokeWidth="2.5" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
             </svg>
           </div>
 
           {/* Eyebrow */}
-          <div className="ty-fu-1" style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'12px', marginBottom:'24px' }}>
+          <div className="ty-fu-1" style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'12px', marginBottom:'14px' }}>
             <div style={{ width:'24px', height:'1px', background:'#5e9a71' }} />
             <span style={{ fontSize:'11px', letterSpacing:'0.28em', textTransform:'uppercase', color:'#5e9a71', fontWeight:500 }}>
               Booking Confirmed · Kakinada
@@ -93,12 +93,12 @@ export const ThankYou = () => {
           <h1 className="ty-serif ty-fu-2" style={{ fontSize:'clamp(3rem,7vw,6rem)', fontWeight:900, color:'#ffffff', lineHeight:1, margin:'0 0 8px' }}>
             Thank You
           </h1>
-          <h1 className="ty-serif ty-fu-2" style={{ fontSize:'clamp(3rem,7vw,6rem)', fontWeight:500, fontStyle:'italic', color:'#b72c78', lineHeight:1, margin:'0 0 28px' }}>
+          <h1 className="ty-serif ty-fu-2" style={{ fontSize:'clamp(3rem,7vw,6rem)', fontWeight:500, fontStyle:'italic', color:'#b72c78', lineHeight:1, margin:'0 0 18px' }}>
             for Reaching Out.
           </h1>
 
           {/* Subtext */}
-          <p className="ty-fu-3" style={{ fontSize:'clamp(14px,1.8vw,17px)', color:'rgba(255,255,255,0.5)', lineHeight:1.85, fontWeight:300, maxWidth:'520px', margin:'0 auto 40px' }}>
+          <p className="ty-fu-3" style={{ fontSize:'clamp(14px,1.8vw,17px)', color:'rgba(255,255,255,0.5)', lineHeight:1.85, fontWeight:300, maxWidth:'520px', margin:'0 auto 20px' }}>
             Your consultation request has been received. Our skincare specialists at Sudha Skin Clinic Kakinada will be in touch with you shortly.
           </p>
 
@@ -130,7 +130,7 @@ export const ThankYou = () => {
         </div>
 
         {/* ── DIVIDER ── */}
-        <div className="ty-fu-4" style={{ display:'flex', alignItems:'center', gap:'20px', marginBottom:'64px' }}>
+        <div className="ty-fu-4" style={{ display:'flex', alignItems:'center', gap:'20px', marginBottom:'34px' }}>
           <div style={{ flex:1, height:'1px', background:'rgba(94,154,113,0.25)' }} />
           <span style={{ fontSize:'10px', letterSpacing:'0.28em', textTransform:'uppercase', color:'#5e9a71', fontWeight:500, whiteSpace:'nowrap' }}>
             What Happens Next
@@ -139,7 +139,7 @@ export const ThankYou = () => {
         </div>
 
         {/* ── NEXT STEPS ── */}
-        <div className="ty-fu-4" style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(280px, 1fr))', gap:'16px', marginBottom:'80px' }}>
+        <div className="ty-fu-4" style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(280px, 1fr))', gap:'16px', marginBottom:'40px' }}>
           {nextSteps.map((step) => (
             <div
               key={step.number}
@@ -187,7 +187,7 @@ export const ThankYou = () => {
             display: 'grid',
             gridTemplateColumns: 'repeat(4,1fr)',
             border: '1px solid rgba(94,154,113,0.2)',
-            marginBottom: '80px',
+            marginBottom: '40px',
             background: '#17251a',
             borderRadius: '12px',
             overflow: 'hidden',
