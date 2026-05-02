@@ -20,7 +20,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <LuminaDifference />
-      <VideoSection />
+      {/* <VideoSection /> */}
       <FeaturedCollection />
       <RitualSection />
       <SocialProof />
