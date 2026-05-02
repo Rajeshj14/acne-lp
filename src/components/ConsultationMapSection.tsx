@@ -19,24 +19,22 @@ export const ConsultationMapSection = () => {
           <div className="mb-6 sm:mb-7 md:mb-9 inline-flex w-fit items-center rounded-full border border-[#b72c78]/45 bg-[#17251a] px-4 sm:px-5 md:px-6 py-2 sm:py-3">
             <span className="mr-2 sm:mr-3 h-2 w-2 sm:h-3 sm:w-3 rounded-full bg-[#b72c78]" />
             <span className="lp-eyebrow text-[#5e9a71] text-xs sm:text-sm md:text-base">
-              Free Consultation &bull; Kakinada
+              Book Consultation &bull; Kakinada
             </span>
           </div>
 
-          <h2 className="lp-title text-white drop-shadow-[2px_2px_0_rgba(0,107,112,0.75)] sm:drop-shadow-[3px_3px_0_rgba(0,107,112,0.75)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-            Clear Skin is a{' '}
+          <h2 className="lp-title text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+            Don't let Acne take {' '}
             <span 
               className="italic inline-block"
               style={{ color: "#b72c78" }}
             >
-              Medical Goal.
+             away your confidence.
             </span>
           </h2>
 
           <p className="lp-body mt-5 sm:mt-6 md:mt-7 max-w-3xl text-white/62 text-sm sm:text-base">
-            Acne has a solution. The right one depends on your acne type, which requires a
-            proper diagnosis. Book your free consultation with our Kakinada dermatologist and
-            get a plan that actually works for your skin.
+           Acne does not have to define how you feel about yourself. Qualified dermatologist-led treatment is now available in Kakinada — no waiting, no travel, no compromise.
           </p>
 
           <div className="mt-7 sm:mt-8 md:mt-9 grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2">
@@ -49,7 +47,7 @@ export const ConsultationMapSection = () => {
                     <svg width="16" height="16" fill="currentColor" viewBox="0 0 32 32">
                       <path d="M16.02 4.8A11.14 11.14 0 0 0 6.6 21.9L5.2 27l5.22-1.36A11.14 11.14 0 1 0 16.02 4.8Zm0 2.02a9.12 9.12 0 0 1 7.73 13.95 9.2 9.2 0 0 1-11.96 3.05l-.37-.22-3.1.8.83-3.02-.24-.39A9.12 9.12 0 0 1 16.02 6.82Zm-3.85 4.33c-.2 0-.52.08-.79.38-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.07 3.31 5.1 4.51 2.52 1 3.04.8 3.59.75.55-.05 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15-.2.3-.78.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.65-.94-2.25-.24-.58-.5-.5-.68-.5h-.58Z" />
                     </svg>
-                    Book Your Consult
+                    Whatsapp Your Question
                   </a>
           </div>
 

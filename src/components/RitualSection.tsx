@@ -278,7 +278,7 @@ const DesktopRitualSection = () => {
 // Main Component
 export const RitualSection = () => {
   return (
-    <section className="relative overflow-hidden bg-[#f7fbf8] px-4 sm:px-5 md:px-8 lg:px-10 py-12 sm:py-16 md:py-20 lg:py-24">
+    <section id="specialists" className="relative overflow-hidden bg-[#f7fbf8] px-4 sm:px-5 md:px-8 lg:px-10 py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(94,154,113,0.08)_0%,transparent_34%),radial-gradient(circle_at_72%_18%,rgba(94,154,113,0.06),transparent_28%)]" />
       <div className="absolute inset-0 opacity-10 bg-[linear-gradient(90deg,rgba(18,32,23,0.08)_1px,transparent_1px),linear-gradient(180deg,rgba(18,32,23,0.06)_1px,transparent_1px)] bg-[length:72px_72px]" />
       <div className="absolute -left-28 top-20 h-72 w-72 rounded-full bg-[#5e9a71]/10 blur-3xl" />

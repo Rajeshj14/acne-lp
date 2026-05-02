@@ -56,18 +56,6 @@ export const FeaturedCollection = () => {
               <p className="lp-body mt-4 sm:mt-5 max-w-[470px] text-white/82 text-sm sm:text-base">
                 Book Acne consultation with our Kakinada's best dermatologist.
               </p>
-
-              {/* Stats Cards - Stack on mobile, side by side on tablet */}
-              <div className="lp-body mt-6 sm:mt-7 md:mt-8 grid gap-3 grid-cols-1 sm:grid-cols-2 text-white/75">
-                <div className="rounded-xl sm:rounded-[16px] border border-white/15 bg-white/10 px-3 sm:px-4 py-3 sm:py-4 backdrop-blur-sm">
-                  <span className="lp-stat mb-1.5 sm:mb-2 block text-[#b72c78] text-xl sm:text-2xl">Secure</span>
-                  <span className="text-xs sm:text-sm">Your data is safe and confidential.</span>
-                </div>
-                <div className="rounded-xl sm:rounded-[16px] border border-white/15 bg-white/10 px-3 sm:px-4 py-3 sm:py-4 backdrop-blur-sm">
-                  <span className="lp-stat mb-1.5 sm:mb-2 block text-[#b72c78] text-xl sm:text-2xl">Accurate</span>
-                  <span className="text-xs sm:text-sm">Precise evaluation for better results.</span>
-                </div>
-              </div>
             </div>
           </div>
 

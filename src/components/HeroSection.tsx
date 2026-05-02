@@ -4,16 +4,16 @@ import { useEffect } from 'react';
 import BookingButton from './BookingButton';
 
 const trustItems = [
-  { icon: 'health_and_safety', line1: 'Treatment Planned', line2: 'by Dermatologists' },
-  { icon: 'verified_user', line1: 'Clinically Tested', line2: 'Ingredients' },
+  { icon: 'health_and_safety', line1: '3–4 Weeks to First', line2: 'Results' },
+  { icon: 'verified_user', line1: '100% Doctor ', line2: 'Performed' },
   { icon: 'workspace_premium', line1: '10+ Years', line2: 'of Expertise' },
 ];
 
 const stats = [
   { value: '3–4', label: 'Weeks to First Results' },
   { value: '100%', label: 'Doctor Performed' },
-  { value: 'Free', label: 'Telugu Speaking doctor' },
-  { value: 'Expert', label: 'Formulated' },
+  { value: 'Free', label: 'Telugu Doctor Speaking' },
+  { value: 'Treatment', label: ' Planned by Dermatologists' },
 ];
 
 export const HeroSection = () => {
@@ -147,7 +147,7 @@ export const HeroSection = () => {
           </div>
 
           {/* Trust badges - Wrap on mobile, flex on tablet */}
-          <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-3 sm:gap-3.5">
+          <div className="grid grid-cols-2 sm:hidden gap-3">
             {trustItems.map((item, i) => (
               <div key={item.icon} className={`flex items-center gap-1.5 sm:gap-2.5 sm:flex-1 sm:min-w-0 ${i === 0 ? 'col-span-2' : ''}`}>
                 <div className="w-7 h-7 sm:w-[34px] sm:h-[34px] rounded-full bg-[#5e9a71]/12 border border-[#b72c78]/25 flex items-center justify-center shrink-0">
@@ -188,6 +188,27 @@ export const HeroSection = () => {
               WhatsApp Us
             </a>
           </div>
+
+          {/* ── WARNING ALERT ── */}
+          <div style={{
+            display: 'flex', gap: '12px', alignItems: 'flex-start',
+            background: 'rgba(255,255,255,0.06)',
+            border: '1px solid rgba(255,200,50,0.2)',
+            borderRadius: '10px',
+            padding: '14px 16px',
+          }}>
+            <span style={{ fontSize: '16px', flexShrink: 0, marginTop: '1px' }}>⚠️</span>
+            <div>
+              <p style={{ margin: '0 0 4px', fontSize: '13px', fontWeight: 700, color: '#f5c842', lineHeight: 1.3 }}>
+                Most acne products treat the symptom, not the cause
+              </p>
+              <p style={{ margin: 0, fontSize: '12px', lineHeight: 1.6, color: 'rgba(255,255,255,0.65)', fontWeight: 400 }}>
+                Hormonal acne, bacterial acne, and fungal acne all need different treatments.
+                The wrong product makes it worse — or does nothing at all.
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
 
