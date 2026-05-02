@@ -6,13 +6,14 @@ import BookingButton from './BookingButton';
 const trustItems = [
   { icon: 'health_and_safety', line1: '3–4 Weeks to First', line2: 'Results' },
   { icon: 'verified_user', line1: '100% Doctor ', line2: 'Performed' },
+  { icon: 'translate', line1: 'Telugu', line2: 'Speaking Doctor' },
   { icon: 'workspace_premium', line1: '10+ Years', line2: 'of Expertise' },
 ];
 
 const stats = [
   { value: '3–4', label: 'Weeks to First Results' },
   { value: '100%', label: 'Doctor Performed' },
-  { value: 'Doctor', label: ' Speaking' },
+  { value: 'Telugu', label: ' Speaking Doctor' },
   { value: 'Treatment', label: ' Planned by Dermatologists' },
 ];
 
@@ -123,9 +124,10 @@ export const HeroSection = () => {
 
           {/* Headline */}
           <div>
-            <p className="lp-body mb-1.5 sm:mb-2 text-white/80 sm:text-white/50 text-xs sm:text-sm">
-              AcneTreatment in Kakinada - Clear skin starts here
-            </p>
+            <span className="inline-flex items-center gap-1.5 mb-1.5 sm:mb-2 px-3 py-1 rounded-full border border-[#5e9a71]/40 bg-[#5e9a71]/10 text-[#5e9a71] text-xs font-medium tracking-wide">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#5e9a71] inline-block" />
+              Acne Treatment in Kakinada · Clear skin starts here
+            </span>
             <h1 className="lp-title hidden sm:block mb-2 sm:mb-2.5 text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
               You Don't Have to <br />
               <span className="italic inline-block" style={{ color: "#b72c78" }}>
@@ -148,8 +150,8 @@ export const HeroSection = () => {
 
           {/* Trust badges - Wrap on mobile, flex on tablet */}
           <div className="grid grid-cols-2 sm:hidden gap-3">
-            {trustItems.map((item, i) => (
-              <div key={item.icon} className={`flex items-center gap-1.5 sm:gap-2.5 sm:flex-1 sm:min-w-0 ${i === 0 ? 'col-span-2' : ''}`}>
+            {trustItems.map((item) => (
+              <div key={item.line1} className="flex items-center gap-1.5">
                 <div className="w-7 h-7 sm:w-[34px] sm:h-[34px] rounded-full bg-[#5e9a71]/12 border border-[#b72c78]/25 flex items-center justify-center shrink-0">
                   <span className="material-icons-round text-sm sm:text-base text-[#5e9a71]">
                     {item.icon}
@@ -193,7 +195,7 @@ export const HeroSection = () => {
           <div style={{
             display: 'flex', gap: '12px', alignItems: 'flex-start',
             background: 'rgba(255,255,255,0.06)',
-            border: '1px solid rgba(255,200,50,0.2)',
+            border: '1px solid #b72c78',
             borderRadius: '10px',
             padding: '14px 16px',
           }}>
