@@ -41,6 +41,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`scroll-smooth ${manrope.variable} ${notoSerif.variable}`}
     >
       <body suppressHydrationWarning className="font-body-md text-on-surface bg-background">{children}</body>
