@@ -73,6 +73,7 @@ export default function Navbar() {
               src="/logos.png"
               alt="Sudha Skin Hair Aesthetics logo"
               fill
+              sizes="(max-width: 640px) 72px, 192px"
               className="object-contain max-sm:object-cover max-sm:object-left"
               priority
             />
@@ -82,6 +83,7 @@ export default function Navbar() {
               src="/logos1.png"
               alt="Sudha Skin Hair Aesthetics secondary logo"
               fill
+              sizes="(max-width: 640px) 172px, 192px"
               className="object-contain max-sm:object-cover max-sm:object-left"
               priority
             />

@@ -110,6 +110,7 @@ export default function Footer() {
                     src="/logos.JPG"
                     alt="Sudha Skin Hair Aesthetics logo"
                     fill
+                    sizes="(max-width: 640px) 80px, 176px"
                     className="object-contain object-left"
                     priority
                   />

@@ -43,7 +43,7 @@ export default function RootLayout({
       lang="en"
       className={`scroll-smooth ${manrope.variable} ${notoSerif.variable}`}
     >
-      <body className="font-body-md text-on-surface bg-background">{children}</body>
+      <body suppressHydrationWarning className="font-body-md text-on-surface bg-background">{children}</body>
     </html>
   );
 }

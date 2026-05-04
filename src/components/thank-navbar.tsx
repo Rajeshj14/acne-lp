@@ -58,6 +58,7 @@ export default function Navbared() {
               src="/logos.JPG"
               alt="Logo"
               fill
+              sizes="(max-width: 640px) 144px, 192px"
               className="object-contain"
               priority
             />
