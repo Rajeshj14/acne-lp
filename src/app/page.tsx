@@ -12,10 +12,12 @@ import { RitualSection } from '@/components/RitualSection';
 import { SocialProof } from '@/components/SocialProof';
 import { NewsletterSection } from '@/components/NewsletterSection';
 import { ConsultationMapSection } from '@/components/ConsultationMapSection';
+import MobileActionBar from '@/components/fat-mobile-action-bar';
 
 export default function Home() {
   return (
     <main className="w-full">
+      <MobileActionBar />
       <BookingModal />
       <Navbar />
       <HeroSection />

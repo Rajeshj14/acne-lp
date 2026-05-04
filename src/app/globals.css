@@ -169,6 +169,10 @@
     letter-spacing: 0;
     font-weight: 800;
   }
+  .faq{
+    gap: 10px;
+    padding:14px 28px;
+  }
 
   @media (min-width: 768px) {
     .lp-title {
@@ -194,6 +198,8 @@
   @media (max-width: 326px) {
     .lp-title    { font-size: 34px; line-height: 1.10; }
     .lp-subtitle { font-size: 16px; }
+    .faq{gap: 5px; padding:14px 8px;
+  }
   }
 
   /* ── Background colors ── */

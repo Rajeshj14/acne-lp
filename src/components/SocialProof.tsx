@@ -32,7 +32,7 @@ export const SocialProof = () => {
             </p>
           </div>
 
-          <BookingButton className="lp-button inline-flex h-[58px] w-full items-center justify-center rounded-full bg-[#5e9a71] px-9 text-white shadow-[0_16px_34px_rgba(94,154,113,0.28)] transition hover:bg-[#4f8562] md:w-[330px]">
+          <BookingButton className="lp-button inline-flex h-[58px] w-full items-center justify-center rounded-full bg-[#5e9a71] px-9 max-sm:px-0 text-white shadow-[0_16px_34px_rgba(94,154,113,0.28)] transition hover:bg-[#4f8562] md:w-[330px]">
             Call for an Appointment
           </BookingButton>
         </div>

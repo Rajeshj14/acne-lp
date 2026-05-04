@@ -43,6 +43,7 @@ export default function Footer() {
             flex-direction: column !important;
             align-items: flex-start !important;
             gap: 8px !important;
+            margin-bottom: 40px !important;
           }
         }
         @media (min-width: 640px) and (max-width: 1023px) {
