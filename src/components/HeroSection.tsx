@@ -126,20 +126,22 @@ export const HeroSection = () => {
           <div>
             <span className="inline-flex items-center gap-1.5 mb-1.5 sm:mb-2 px-3 py-1 rounded-full border border-[#5e9a71]/40 bg-[#5e9a71]/10 text-[#5e9a71] text-xs font-medium tracking-wide">
               <span className="w-1.5 h-1.5 rounded-full bg-[#5e9a71] inline-block" />
-              Acne Treatment in Kakinada · Clear skin starts here
+                You Don't Have to Hide Any More. Advanced
             </span>
             <h1 className="lp-title hidden sm:block mb-2 sm:mb-2.5 max-sm:text-xl text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-              You Don't Have to <br />
+              Acne Treatment<br />
               <span className="italic inline-block" style={{ color: "#b72c78" }}>
-                Hide Any &amp;
-              </span> More. Advanced
+              in Kakinada · Clear  &amp;
+              <span style={{ color: "#fff" }}> skin starts here.</span>
+              </span>
             </h1>
             <h1 className="lp-title block sm:hidden mb-2 text-white text-lg">
-              You Don't Have to
-              <span className="italic inline-block" style={{ color: "#b72c78" }}>
-                Hide Any &amp;
-              </span>
-               More Advanced
+              Acne Treatment 
+             <span className="italic inline-block" style={{ color: "#b72c78" }}>
+               in Kakinada · Clear &amp;
+            <span style={{ color: "#fff" }}> skin starts here.</span>
+            </span>
+               
             </h1>
             <p className="lp-body text-white/80 sm:text-white/40 text-sm sm:text-base">
               Now Available Right Here in Kakinada.

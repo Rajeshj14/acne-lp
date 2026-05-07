@@ -33,7 +33,7 @@ const features = [
     description:
       "Achieve clear, healthy skin with our safe, clinically-proven treatments, with minimal recovery time.",
     side: "right",
-    image: "images15.jpg",
+    image: "/beautiful.jpg",
   },
 ];
 

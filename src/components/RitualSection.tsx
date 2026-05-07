@@ -31,7 +31,7 @@ const doctors = [
     role: "MBBS,DD",
     specialty: "Acne & Scar Care",
     qualifications: "Consultant",
-    image: "/dr-chandrakala.jpeg",
+    image: "/chandrakala.jpeg",
     exp: "25+ Yrs",
     experience: "25+ Years of Experience",
     featured: false,
